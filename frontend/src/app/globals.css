@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Force Clean White & Crimson Red Theme (No other colors) */
+  --color-slate-950: #ffffff;
+  --color-slate-900: #fafafa;
+  --color-slate-850: #eaeaea;
+  --color-slate-800: #e5e5e5;
+  --color-slate-750: #dddddd;
+  --color-slate-700: #d4d4d4;
+
+  --color-slate-100: #171717;
+  --color-slate-200: #262626;
+  --color-slate-300: #404040;
+  --color-slate-400: #525252;
+  --color-slate-500: #737373;
+  --color-slate-650: #525252;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-150: #eaeaea;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-550: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-650: #3f3f46;
+
+  --color-blue-50: #fff5f5;
+  --color-blue-100: rgba(192, 34, 33, 0.05);
+  --color-blue-200: rgba(192, 34, 33, 0.1);
+  --color-blue-300: rgba(192, 34, 33, 0.2);
+  --color-blue-400: #d42c20;
+  --color-blue-500: #d42c20;
+  --color-blue-600: #c02221;
+  --color-blue-700: #b91e15;
+  --color-blue-800: #b91e15;
+  --color-blue-900: #c02221;
+  --color-blue-950: #ffffff;
+
+  --color-indigo-400: #d42c20;
+  --color-indigo-500: #c02221;
+  --color-indigo-600: #b91e15;
+  --color-indigo-900: #c02221;
+
+  --color-purple-400: #c02221;
+  --color-purple-600: #b91e15;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Force hardcoded text-white elements in dashboard panels & headers to be dark for readability */
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+p.text-white,
+span.text-white {
+  color: #171717 !important;
+}
+
+/* Keep text white inside action buttons, links, and preview canvas sections */
+button,
+button.text-white,
+button *,
+a.bg-blue-600,
+a.bg-blue-650,
+a.bg-blue-500,
+a.bg-emerald-600,
+a.bg-purple-600,
+a.text-white,
+a.text-white *,
+.bg-blue-600 h1.text-white,
+.bg-blue-600 h2.text-white,
+.bg-blue-600 h3.text-white,
+.bg-blue-600 h4.text-white,
+.bg-blue-600 p.text-white,
+.bg-blue-600 span.text-white,
+.bg-blue-500 h1.text-white,
+.bg-blue-500 h2.text-white,
+.bg-blue-500 h3.text-white,
+.bg-blue-500 h4.text-white,
+.bg-blue-500 p.text-white,
+.bg-blue-500 span.text-white,
+.bg-purple-600 h1.text-white,
+.bg-purple-600 h2.text-white,
+.bg-purple-600 h3.text-white,
+.bg-purple-600 h4.text-white,
+.bg-purple-600 p.text-white,
+.bg-purple-600 span.text-white,
+.bg-emerald-600 h1.text-white,
+.bg-emerald-600 h2.text-white,
+.bg-emerald-600 h3.text-white,
+.bg-emerald-600 h4.text-white,
+.bg-emerald-600 p.text-white,
+.bg-emerald-600 span.text-white,
+[style*="background-image"] h1,
+[style*="background-image"] h2,
+[style*="background-image"] h3,
+[style*="background-image"] h4,
+[style*="background-image"] p,
+[style*="background-image"] span,
+[style*="background-color"] h1.text-white,
+[style*="background-color"] h2.text-white,
+[style*="background-color"] h3.text-white,
+[style*="background-color"] h4.text-white,
+[style*="background-color"] p.text-white,
+[style*="background-color"] span.text-white {
+  color: #ffffff !important;
+}
+
+/* Sidebar styling overrides for high-contrast light-theme visibility */
+aside {
+  background-color: #ffffff !important;
+  border-color: #eaeaea !important;
+}
+
+aside * {
+  border-color: #eaeaea !important;
+}
+
+/* Sidebar Branding Title & Subtitle */
+aside span.text-slate-500 {
+  color: #737373 !important;
+}
+
+/* Sidebar menu links - Inactive State */
+aside nav a {
+  color: #525252 !important;
+}
+aside nav a svg {
+  color: #737373 !important;
+}
+
+/* Sidebar menu links - Hover State */
+aside nav a:hover {
+  background-color: rgba(192, 34, 33, 0.08) !important;
+  color: #c02221 !important;
+}
+aside nav a:hover svg {
+  color: #c02221 !important;
+}
+
+/* Sidebar menu links - Active State */
+aside nav a.bg-blue-600 {
+  background-color: #c02221 !important;
+  color: #ffffff !important;
+}
+aside nav a.bg-blue-600 svg {
+  color: #ffffff !important;
+}
+
+/* Sidebar User Footer Panel */
+aside .bg-slate-950\/40 {
+  background-color: #fafafa !important;
+}
+aside .bg-slate-800 {
+  background-color: #eaeaea !important;
+}
+aside .text-slate-300 {
+  color: #525252 !important;
+}
+aside .text-slate-500 {
+  color: #737373 !important;
+}
+
+/* Login form inputs: theme inverts slate scale, so use explicit readable colors */
+.grip-login-input {
+  color: #171717 !important;
+  -webkit-text-fill-color: #171717;
+}
+
+.grip-login-input::placeholder {
+  color: #737373;
+  opacity: 1;
+}
+
+.grip-login-input:-webkit-autofill,
+.grip-login-input:-webkit-autofill:hover,
+.grip-login-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #171717 !important;
+  box-shadow: 0 0 0 1000px #fff5f6 inset !important;
+}
+
+/* GRIP red header bar — keep branding text white */
+header[class*='bg-[#c21a22]'] p,
+header[class*='bg-[#c21a22]'] span,
+header[class*='bg-[#c21a22]'] button {
+  color: #ffffff;
+}
+
+/* Toast notification slide-in animation */
+@keyframes slideInToast {
+  from {
+    opacity: 0;
+    transform: translateX(110%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Ensure toast text colours are always white, immune to theme overrides */
+[role='alert'] p,
+[role='alert'] span,
+[role='alert'] button {
+  color: #ffffff !important;
+}
