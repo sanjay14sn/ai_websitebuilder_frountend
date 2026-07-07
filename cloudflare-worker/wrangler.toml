@@ -1,0 +1,15 @@
+name = "publisher-router"
+main = "src/index.js"
+compatibility_date = "2026-06-11"
+
+kv_namespaces = [
+  { binding = "WEBSITE_STORE", id = "8275d61cfd7a42fbac5adad9750e990d" }
+]
+
+[vars]
+# Origin for api.gripforumglobal.com proxy (deployed ai-website-builderbackend, no trailing slash)
+# Example: https://your-server.com:5002 or https://builder-origin.example.com
+API_ORIGIN = "http://localhost:5002"
+# Used by worker analytics logging
+BACKEND_API_URL = "http://localhost:5002"
+DEFAULT_DOMAIN = "gripforumglobal.com"
