@@ -9,7 +9,7 @@ kv_namespaces = [
 [vars]
 # Origin for api.gripforumglobal.com proxy (deployed ai-website-builderbackend, no trailing slash)
 # Example: https://your-server.com:5002 or https://builder-origin.example.com
-API_ORIGIN = "http://localhost:5002"
+API_ORIGIN = "https://api.gripforumglobal.com"
 # Used by worker analytics logging
-BACKEND_API_URL = "http://localhost:5002"
+BACKEND_API_URL = "https://api.gripforumglobal.com"
 DEFAULT_DOMAIN = "gripforumglobal.com"
