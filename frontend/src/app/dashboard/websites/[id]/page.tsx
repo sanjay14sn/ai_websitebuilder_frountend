@@ -98,12 +98,10 @@ export default function WebsiteDetailPage() {
     try {
       await api.post(`/websites/${id}/generate`);
       toast.success('Website Generated!', 'The AI has successfully structured all content sections.');
-      await loadData();
     } catch (err: any) {
       toast.error('Generation Failed', err.message || 'Website generation failed. Please try again.');
     } finally {
-      setGenerating(false);
-      setActionLoading(false);
+      window.location.reload();
     }
   };
 

@@ -54,18 +54,15 @@ export default function WebsitesPage() {
 
   const handleGenerate = async (id: string) => {
     if (!confirm('Generate the full website using AI? This may take 1–2 minutes.')) return;
-    const company = websites.find((w) => w._id === id)?.companyName;
     setGeneratingId(id);
     setActionLoadingId(id);
     try {
       await api.post(`/websites/${id}/generate`);
       alert('Website generated successfully!');
-      await loadWebsites();
     } catch (err: any) {
       alert(err.message || 'Website generation failed');
     } finally {
-      setGeneratingId(null);
-      setActionLoadingId(null);
+      window.location.reload();
     }
   };
 

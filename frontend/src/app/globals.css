@@ -81,9 +81,20 @@ span.text-white {
 }
 
 /* Keep text white inside action buttons, links, and preview canvas sections */
-button,
+button.bg-blue-600,
+button.bg-blue-650,
+button.bg-blue-500,
+button.bg-emerald-600,
+button.bg-purple-600,
+button.bg-red-600,
+button.bg-\[\#c02221\],
+button.bg-\[\#c21a22\],
 button.text-white,
-button *,
+button.bg-blue-600 *,
+button.bg-blue-500 *,
+button.bg-emerald-600 *,
+button.bg-purple-600 *,
+button.bg-red-600 *,
 a.bg-blue-600,
 a.bg-blue-650,
 a.bg-blue-500,
@@ -183,6 +194,15 @@ aside .text-slate-300 {
 }
 aside .text-slate-500 {
   color: #737373 !important;
+}
+
+/* Sign Out must stay visible on the light sidebar */
+aside button.dashboard-sign-out,
+aside button.dashboard-sign-out * {
+  color: #c02221 !important;
+}
+aside button.dashboard-sign-out:hover {
+  background-color: rgba(192, 34, 33, 0.08) !important;
 }
 
 /* Login form inputs: theme inverts slate scale, so use explicit readable colors */
